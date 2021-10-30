@@ -6,8 +6,12 @@
 #include <cmath>
 #include <cfloat>
 #include <algorithm>    // std::sort
+//#include <time.h>       // to get the runtime for inputs
 
 using namespace std;
+
+#include <chrono>       // to get the runtime for inputs
+using namespace std::chrono;
 
 
 
@@ -153,6 +157,8 @@ vector<bool> combinedConnectivity(Edge e, int num_vertices, const vector< Vertex
 
 int main()
 {    
+    auto start = high_resolution_clock::now();
+
     //obtain the coordinates of all points as a pair
     vector< Vertex > vertices;
     vector< Edge > edges;
@@ -311,6 +317,12 @@ int main()
         it->printVertices();
     }
     cout << "\n";
+
+    auto end = high_resolution_clock::now();
+    auto total_runtime = duration_cast<microseconds>(end - start);
+    double runtime_in_seconds = (double)total_runtime.count() / 1000000.0
+
+    cout << "Runtime: " << total_runtime.count() << " s\n";
     
     return 0;
 }
