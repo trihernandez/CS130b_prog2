@@ -1,0 +1,30 @@
+    //Prim's algorithm:
+    //  Select a minimum cost edge
+    //  connect to the smallest-cost edge adjacent to either pt.
+    //  continuing onward until all points are accounted for 
+
+    //Kruskal's algorithm:
+    //  Select all edges of minimum cost, ignoring edges that connect already-connect pts.
+    //  Out of the remaining edges, select the min.-cost edge,
+    //    connecting it with the rest of the map if the points are not connected
+    //  Continue until all points are connected
+
+    //Kruskal's algorithm (detailed):
+    /*
+        Our data structure
+    */
+    //  Each vertex should have an array storing a boolean for each vertex
+    //    Each value is true if there is a set of edges that can reach to it, given our edges.
+    //  It starts at false except for the current vertex
+    /*
+        After inputting the data
+    */
+    //  Organize all of the edges by length
+    //  Select the edge of minimum cost
+    //    Set the connectivity for both point indices of the edge, for both points, to true
+    //  Continue onward until all points are connected
+    //    For each edge, check if the connectivity is true
+    //      If not, connect each point to the edge
+    //      The connectivity of each point follows a bitwise or operation:
+    //      The points connected by the first side are now connected to the other
+    //      And vice-versa
