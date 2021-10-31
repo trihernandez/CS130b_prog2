@@ -320,9 +320,9 @@ int main()
 
     auto end = high_resolution_clock::now();
     auto total_runtime = duration_cast<microseconds>(end - start);
-    double runtime_in_seconds = (double)total_runtime.count() / 1000000.0
+    double runtime_in_seconds = (double)total_runtime.count() / 10000000.0;
 
-    cout << "Runtime: " << total_runtime.count() << " s\n";
+    cout << "Runtime: " << runtime_in_seconds << " s\n";
     
     return 0;
 }
