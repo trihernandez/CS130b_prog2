@@ -10,7 +10,7 @@
 
 using namespace std;
 
-#include <chrono>       // to get the runtime for inputs
+#include <chrono>       // to get the runtime for inputs. Taken from https://www.geeksforgeeks.org/measure-execution-time-function-cpp/
 using namespace std::chrono;
 
 
@@ -157,8 +157,6 @@ vector<bool> combinedConnectivity(Edge e, int num_vertices, const vector< Vertex
 
 int main()
 {    
-    auto start = high_resolution_clock::now();
-
     //obtain the coordinates of all points as a pair
     vector< Vertex > vertices;
     vector< Edge > edges;
@@ -235,6 +233,7 @@ int main()
             edges.push_back( e_input );
         }
 
+    auto start = high_resolution_clock::now();
     /*
     cout << "\n";
     for (vector< Vertex >::iterator it = vertices.begin(); it != vertices.end(); ++it)
