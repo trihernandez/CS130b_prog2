@@ -125,6 +125,13 @@ bool sortByEdgeID(Edge a, Edge b)
 }
 
 
+bool sortByVertices(Edge a, Edge b)
+{
+    if(a.a.identifier == b.a.identifier)
+        return a.b.identifier < b.b.identifier;
+    return a.a.identifier < b.a.identifier;
+}
+
 bool sortByVertexID(Vertex a, Vertex b)
 {
     return a.identifier < b.identifier;
@@ -308,7 +315,7 @@ int main()
     */
     
     //sort solutions by identifier
-    std::sort(solution.begin(), solution.end(), sortByEdgeID);
+    std::sort(solution.begin(), solution.end(), sortByVertices);
     
     //check solutions
     for (vector< Edge >::iterator it = solution.begin(); it != solution.end(); ++it)
